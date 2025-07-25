@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fake WhatsApp Bug Tool</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', monospace;
+      background-color: black;
+      color: #ff3366;
+      text-align: center;
+    }
+
+    .login, .tool, .result {
+      display: none;
+      padding-top: 100px;
+    }
+
+    input, select, button {
+      background-color: transparent;
+      border: 2px solid #ff3366;
+      color: #ff3366;
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+      width: 250px;
+      border-radius: 8px;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    #photo {
+      width: 120px;
+      border-radius: 100px;
+      margin-top: 20px;
+    }
+
+    .result pre {
+      font-size: 18px;
+      color: #00ff00;
+      white-space: pre-wrap;
+      padding: 20px;
+    }
+
+    .success-message {
+      color: #00ff00;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Login Page -->
+  <div class="login" id="login">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username"><br>
+    <input type="password" id="password" placeholder="Password"><br>
+    <button onclick="login()">Login</button>
+  </div>
+
+  <!-- Tool Page -->
+  <div class="tool" id="tool">
+    <img src="halo.jpg" id="photo" alt="User Photo">
+    <h2>Attack Menu</h2>
+    <input type="text" id="number" placeholder="62xxxxxxxxxxx"><br>
+    <select id="bug-type">
+      <option value="Ultimate Crash">Ultimate Crash</option>
+      <option value="Lag Flood">Lag Flood</option>
+      <option value="Bug Freeze">Bug Freeze</option>
+      <option value="Bug Mati">Bug Mati</option>
+      <option value="Bug Ringan">Bug Ringan</option>
+      <option value="Bug Spam">Bug Spam</option>
+      <option value="Bug Mega Ultimate">Bug Mega Ultimate</option>
+    </select><br>
+    <button onclick="sendBug()">▶ SEND BUG</button>
+  </div>
+
+  <!-- Result Page -->
+  <div class="result" id="result">
+    <pre>
+      -o          o-         
+   +hydNNNNdyh+             
+ +mMMMMMMMMMMMMm+           
+ `dMMm:MMMMMMMMMMMMm`       
+ hMMMMMMMMMMMMMMMMMm        
+    </pre>
+    <div class="success-message">✅ Successfully sent WhatsApp bug!</div>
+  </div>
+
+  <script>
+    document.getElementById("login").style.display = "block";
+
+    function login() {
+      const u = document.getElementById("username").value;
+      const p = document.getElementById("password").value;
+      if (u && p) {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("tool").style.display = "block";
+      } else {
+        alert("Please enter username and password");
+      }
+    }
+
+    function sendBug() {
+      // Ganti ke layar hitam dengan hasil ASCII
+      document.getElementById("tool").style.display = "none";
+      document.body.style.backgroundColor = "black";
+      document.getElementById("result").style.display = "block";
+    }
+  </script>
+</body>
+</html>
